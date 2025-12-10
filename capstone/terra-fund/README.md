@@ -13,6 +13,47 @@ A decentralized crowdfunding platform built on Solana blockchain, enabling trans
 
 ## 🏗️ Architecture
 
+```mermaid
+graph TB
+    subgraph Flow["👥 User Actions"]
+        F1[Create Campaign]
+        F2[Donate SOL]
+        F3[Withdraw Funds]
+    end
+    
+    subgraph State["📋 Program State"]
+        PS["ProgramState<br/>campaign_count | platform_fee"]
+    end
+    
+    subgraph Accounts["💾 Data Accounts"]
+        A1["Campaign PDA<br/>creator | goal | amount_raised | balance"]
+        A2["Transaction PDA<br/>donor | amount | timestamp"]
+    end
+    
+    %% Flow connections
+    F1 --> A1
+    F2 --> A1
+    F2 --> A2
+    F3 --> A1
+    
+    PS -.-> A1
+    A1 -.-> A2
+    
+    %% Styling
+    style PS fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#fff
+    style A1 fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    style A2 fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+    
+    style F1 fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
+    style F2 fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
+    style F3 fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
+    
+    style Flow fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px
+    style State fill:#eff6ff,stroke:#3b82f6,stroke-width:2px
+    style Accounts fill:#ecfdf5,stroke:#10b981,stroke-width:2px
+```
+
+
 ### Smart Contract Features
 - **Campaign Management**: Create, update, and delete campaigns
 - **Donation System**: Accept donations with automatic balance tracking
