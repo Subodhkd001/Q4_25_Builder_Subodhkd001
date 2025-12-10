@@ -11,13 +11,6 @@ A comprehensive collection of Solana blockchain projects built during the Turbin
 
 - [Overview](#-overview)
 - [Projects](#-projects)
-  - [Capstone: TerraFund](#-capstone-terrafund)
-  - [AMM (Automated Market Maker)](#-amm-automated-market-maker)
-  - [Dice Game](#-dice-game)
-  - [Escrow Program](#-escrow-program)
-  - [Metaplex Core NFT](#-metaplex-core-nft)
-  - [NFT Staking](#-nft-staking)
-  - [Vault Program](#-vault-program)
 - [Prerequisites](#-prerequisites)
 - [Getting Started](#-getting-started)
 - [Tech Stack](#-tech-stack)
@@ -42,6 +35,20 @@ This repository contains advanced Solana blockchain projects developed as part o
 
 ## 🎯 Projects
 
+| Project | Description | Tech | Repository Link |
+|---------|-------------|------|-----------------|
+| 🌍 **TerraFund** (Capstone) | Decentralized crowdfunding platform with transparent fundraising campaigns | Anchor, Next.js, TypeScript | [📂 View Project](./capstone/terra-fund) |
+| 💱 **AMM** | Automated Market Maker implementing x*y=k constant product formula | Anchor, Rust | [📂 View Project](./anchor-amm-starter-q4-25) |
+| 🎲 **Dice Game** | On-chain dice game with provably fair randomness using Ed25519 | Anchor, Rust | [📂 View Project](./anchor-dice-game-q4-25) |
+| 🤝 **Escrow Program** | Trustless P2P token swap escrow system | Anchor, Rust | [📂 View Project](./anchor-escrow-starter-q4-25) |
+| 🎨 **Metaplex Core NFT** | NFT minting and management with Metaplex Core | Anchor, Metaplex | [📂 View Project](./anchor-mplxcore-starter-q4-25) |
+| 🔒 **NFT Staking** | Stake NFTs and earn reward tokens over time | Anchor, Rust | [📂 View Project](./anchor-nft-staking-starter-q4-25) |
+| 🏦 **Vault Program** | Secure SOL vault with deposit/withdraw functionality | Anchor, Rust | [📂 View Project](./anchor-vault-starter-q4-25) |
+| 📝 **Prerequisites** | Initial Turbin3 TypeScript setup and prerequisites | TypeScript | [📂 View Project](./preReq/turbin3_ts) |
+| 🎬 **Starter** | Turbin3 starter code and examples | TypeScript, Rust | [📂 View Project](./turbin3_starter) |
+
+---
+
 ### 🌍 Capstone: TerraFund
 
 **A decentralized crowdfunding platform built on Solana**
@@ -64,7 +71,6 @@ Enables transparent and secure fundraising campaigns with smart contract automat
 - **Wallet:** Solana Wallet Adapter
 
 **Architecture:**
-
 ```mermaid
 graph TB
     subgraph Flow["👥 User Actions"]
@@ -74,12 +80,15 @@ graph TB
     end
     
     subgraph State["📋 Program State"]
-        PS["ProgramState<br/>campaign_count | platform_fee"]
+        PS["ProgramState
+        campaign_count | platform_fee"]
     end
     
     subgraph Accounts["💾 Data Accounts"]
-        A1["Campaign PDA<br/>creator | goal | amount_raised | balance"]
-        A2["Transaction PDA<br/>donor | amount | timestamp"]
+        A1["Campaign PDA
+        creator | goal | amount_raised | balance"]
+        A2["Transaction PDA
+        donor | amount | timestamp"]
     end
     
     F1 --> A1
@@ -90,9 +99,7 @@ graph TB
     A1 -.-> A2
 ```
 
-📂 **Location:** `capstone/terra-fund/`
-
-[View Full Documentation →](capstone/terra-fund/README.md)
+📂 **[View Full Documentation →](./capstone/terra-fund/README.md)**
 
 ---
 
@@ -115,7 +122,7 @@ A decentralized exchange protocol allowing users to provide liquidity, swap toke
 - LP token minting for liquidity providers
 - Fee distribution to liquidity providers
 
-📂 **Location:** `anchor-amm-starter-q4-25/`
+📂 **[View Project →](./anchor-amm-starter-q4-25)**
 
 ---
 
@@ -139,7 +146,7 @@ Implements a betting system where players can place bets on dice rolls with veri
 - Time-based bet expiry
 - Secure vault management
 
-📂 **Location:** `anchor-dice-game-q4-25/`
+📂 **[View Project →](./anchor-dice-game-q4-25)**
 
 ---
 
@@ -162,9 +169,7 @@ Enables peer-to-peer token swaps without requiring trust between parties, with f
 - NFT-for-token swaps
 - P2P trading without centralized exchange
 
-📂 **Location:** `anchor-escrow-starter-q4-25/`
-
-[View Documentation →](anchor-escrow-starter-q4-25/README.md)
+📂 **[View Project →](./anchor-escrow-starter-q4-25)** | **[Documentation →](./anchor-escrow-starter-q4-25/README.md)**
 
 ---
 
@@ -188,7 +193,7 @@ Implements creator whitelisting, collection management, and NFT minting with plu
 - Creator/Minter attribution
 - Collection-based organization
 
-📂 **Location:** `anchor-mplxcore-starter-q4-25/`
+📂 **[View Project →](./anchor-mplxcore-starter-q4-25)**
 
 ---
 
@@ -213,7 +218,7 @@ A comprehensive NFT staking system with reward token distribution and freeze del
 - Stake accounts per NFT
 - Reward mint for token distribution
 
-📂 **Location:** `anchor-nft-staking-starter-q4-25/`
+📂 **[View Project →](./anchor-nft-staking-starter-q4-25)**
 
 ---
 
@@ -236,9 +241,7 @@ A simple yet secure vault implementation demonstrating PDA patterns and rent-exe
 - CPI with signer seeds
 - Account closure patterns
 
-📂 **Location:** `anchor-vault-starter-q4-25/`
-
-[View Documentation →](anchor-vault-starter-q4-25/README.md)
+📂 **[View Project →](./anchor-vault-starter-q4-25)** | **[Documentation →](./anchor-vault-starter-q4-25/README.md)**
 
 ---
 
@@ -247,7 +250,7 @@ A simple yet secure vault implementation demonstrating PDA patterns and rent-exe
 ### Required Tools
 
 | Tool | Version | Installation |
-|------|---------|-------------|
+|------|---------|--------------|
 | Node.js | v18.18.0+ | [Download](https://nodejs.org/) |
 | Rust | v1.89.0+ | [Install](https://rustup.rs/) |
 | Anchor CLI | v0.32.1+ | `cargo install --git https://github.com/coral-xyz/anchor avm --locked --force` |
@@ -255,7 +258,6 @@ A simple yet secure vault implementation demonstrating PDA patterns and rent-exe
 | Yarn/pnpm | Latest | `npm install -g yarn pnpm` |
 
 ### Optional Tools
-
 - [Surfpool](https://surfpool.run/) - Enhanced local testing and runbooks
 - [Txtx](https://txtx.sh/) - Infrastructure as Code for Solana
 
@@ -266,8 +268,8 @@ A simple yet secure vault implementation demonstrating PDA patterns and rent-exe
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/solana-turbin3-q4_25_builder.git
-cd solana-turbin3-q4_25_builder
+git clone https://github.com/Subodhkd001/Q4_25_Builder_Subodhkd001.git
+cd Q4_25_Builder_Subodhkd001
 ```
 
 ### Set Up Solana Wallet
@@ -364,7 +366,3 @@ Contributions, issues, and feature requests are welcome!
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-[🌐 Solana](https://solana.com/) • [🛠️ Anchor](https://www.anchor-lang.com/) • [🚀 Turbin3](https://turbin3.com/)
-
-</div>
