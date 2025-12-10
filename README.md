@@ -60,7 +60,7 @@ Enables transparent and secure fundraising campaigns with smart contract automat
 - 💰 Transparent on-chain donation tracking
 - 🔒 Smart contract-enforced withdrawal rules (minimum 1 SOL)
 - 📊 Real-time campaign progress monitoring
-- 🎯 Configurable platform fees (default 7%)
+- 🎯 Configurable platform fees (default 5%)
 - ⚡ Fast transactions with low costs on Solana
 
 **Tech Stack:**
@@ -341,19 +341,6 @@ surfpool run deployment
 - **Surfpool** - Local validator and runbooks
 - **Jest** - Testing framework
 
----
-
-## 📖 Learning Resources
-
-### Official Documentation
-- [Solana Docs](https://docs.solana.com/)
-- [Anchor Book](https://book.anchor-lang.com/)
-- [Solana Cookbook](https://solanacookbook.com/)
-- [Metaplex Docs](https://developers.metaplex.com/)
-
-### Turbin3 Resources
-- [Turbin3 Website](https://turbin3.com/)
-- [Discord Community](https://discord.gg/turbin3)
 
 ---
 
